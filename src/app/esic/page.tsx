@@ -5,7 +5,11 @@ import { Header } from "../_components/Header";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
+
 import { Divider } from "@nextui-org/divider";
+import ReactInputMask from "react-input-mask";
+import { Input, Textarea } from "@nextui-org/input";
+import { Button } from "@nextui-org/react";
 
 export default function Esic() {
   const schema = Yup.object().shape({
@@ -57,7 +61,7 @@ export default function Esic() {
     validationSchema: schema,
 
     // Handle form submission
-    onSubmit: async (...args) => {
+    onSubmit: async (values) => {
       // Make a request to your backend to store the data
     },
   });
@@ -78,6 +82,130 @@ export default function Esic() {
           outros.
         </p>
         <Divider />
+        <div className="w-full flex items-center justify-center">
+          <form onSubmit={handleSubmit} method="POST">
+            <div className="w-[500px] h-auto flex flex-col gap-5">
+              <label className="text-base text-[#024c3d] font-semibold">
+                Dados pessoais
+              </label>
+              <div className="w-full flex flex-col gap-3">
+                <Input
+                  name="nome"
+                  type="text"
+                  placeholder="Nome completo"
+                  value={values.nome}
+                  onChange={handleChange}
+                />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  value={values.email}
+                  onChange={handleChange}
+                />
+                <div className="w-full flex gap-3">
+                  <Input
+                    name="cpf"
+                    type="text"
+                    placeholder="CPF"
+                    value={values.cpf}
+                    onChange={handleChange}
+                  />
+                  <Input
+                    name="telefone"
+                    type="text"
+                    placeholder="Telefone"
+                    value={values.telefone}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="w-full flex gap-3">
+                  <Input
+                    name="escolaridade"
+                    type="text"
+                    placeholder="Escolaridade"
+                    value={values.escolaridade}
+                    onChange={handleChange}
+                  />
+                  <Input
+                    name="idade"
+                    type="text"
+                    placeholder="Idade"
+                    value={values.idade}
+                    onChange={handleChange}
+                  />
+                </div>
+                <label className="text-base text-[#024c3d] font-semibold">
+                  Dados do endereço
+                </label>
+                <div className="w-full flex flex-col gap-3">
+                  <Input
+                    name="cep"
+                    type="text"
+                    placeholder="CEP"
+                    value={values.cep}
+                    onChange={handleChange}
+                  />
+                  <Input
+                    name="bairro"
+                    type="text"
+                    placeholder="Bairro"
+                    value={values.bairro}
+                    onChange={handleChange}
+                  />
+                  <div className="w-full flex gap-3">
+                    <Input
+                      name="municipio"
+                      type="text"
+                      placeholder="Municipio"
+                      value={values.municipio}
+                      onChange={handleChange}
+                    />
+                    <Input
+                      name="estado"
+                      type="text"
+                      placeholder="Estado"
+                      value={values.estado}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+                <label className="text-base text-[#024c3d] font-semibold">
+                  Dados da informação
+                </label>
+                <div className="w-full flex flex-col gap-3">
+                  <Input
+                    name="orgao"
+                    type="text"
+                    placeholder="Orgão"
+                    value={values.orgao}
+                    onChange={handleChange}
+                  />
+                  <Input
+                    name="tipo"
+                    type="text"
+                    placeholder="Tipo"
+                    value={values.tipo}
+                    onChange={handleChange}
+                  />
+                  <Textarea
+                    name="descricao"
+                    type="text"
+                    placeholder="Descrição"
+                    value={values.descricao}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <Button
+                type="submit"
+                className="w-full h-12 bg-[#024c3d] text-white"
+              >
+                Enviar
+              </Button>
+            </div>
+          </form>
+        </div>
       </GridContent>
       <Footer />
     </div>
