@@ -7,9 +7,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import { Divider } from "@nextui-org/divider";
-import ReactInputMask from "react-input-mask";
 import { Input, Textarea } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
+import { Checkbox } from "@nextui-org/checkbox";
 
 export default function Esic() {
   const schema = Yup.object().shape({
@@ -32,6 +32,8 @@ export default function Esic() {
     orgao: Yup.string().required(),
     tipo: Yup.string().required(),
     descricao: Yup.string().required(),
+
+    aceitoTermos: Yup.boolean().required(),
   });
 
   const formik = useFormik({
@@ -55,6 +57,8 @@ export default function Esic() {
       orgao: "",
       tipo: "",
       descricao: "",
+
+      aceitoTermos: false,
     },
 
     // Pass the Yup schema to validate the form
@@ -66,7 +70,8 @@ export default function Esic() {
     },
   });
 
-  const { errors, touched, values, handleChange, handleSubmit } = formik;
+  const { errors, touched, values, handleChange, handleSubmit, setFieldValue } =
+    formik;
 
   return (
     <div className="w-full h-auto">
@@ -197,6 +202,16 @@ export default function Esic() {
                   />
                 </div>
               </div>
+              <Checkbox
+                isSelected={values.aceitoTermos}
+                color="success"
+                className="text-xs font-light"
+                onChange={(e) =>
+                  setFieldValue("aceitoTermos", e.target.checked)
+                }
+              >
+                 Declaro que as informações acima são verdadeiras e estou ciente de estar sujeito às penas da legislação pertinente caso tenha afirmado falsamente os dados preenchidos.
+              </Checkbox>
               <Button
                 type="submit"
                 className="w-full h-12 bg-[#024c3d] text-white"

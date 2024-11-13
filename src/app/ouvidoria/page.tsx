@@ -90,7 +90,7 @@ export default function Ouvidoria() {
               {errors.email && touched.email && (
                 <ErrorMessage>{errors.email}</ErrorMessage>
               )}
-              
+
               <Select
                 aria-label="Assunto"
                 isRequired
@@ -120,8 +120,7 @@ export default function Ouvidoria() {
               )}
               <Button
                 type="submit"
-                size="lg"
-                className="bg-[#024c3d] text-white max-w-52"
+                className="bg-[#024c3d] text-white w-full"
               >
                 Enviar
               </Button>
