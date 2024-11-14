@@ -8,11 +8,9 @@ import { Footer } from "./_components/Footer"
 export default function Home() {
   return (
     <NextUIProvider>
-      <Header/>
       <SectionHero/>
       <Propositions/>
       <Warnings/>
-      <Footer/>
     </NextUIProvider>
     
   );

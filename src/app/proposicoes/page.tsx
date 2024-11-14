@@ -5,15 +5,11 @@ import { Header } from "../_components/Header";
 
 export default function Proposicoes() {
   return (
-    <div className="w-full h-auto">
-      <Header />
-      <GridContent>
-        <Breadcrumbs>
-          <BreadcrumbItem href="/">Home</BreadcrumbItem>
-        </Breadcrumbs>
-        <p> Proposicoes </p>
-      </GridContent>
-      <Footer />
-    </div>
+    <GridContent>
+      <Breadcrumbs>
+        <BreadcrumbItem href="/">Home</BreadcrumbItem>
+      </Breadcrumbs>
+      <p> Proposicoes </p>
+    </GridContent>
   );
 }

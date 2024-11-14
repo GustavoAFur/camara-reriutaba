@@ -10,6 +10,8 @@ import { Divider } from "@nextui-org/divider";
 import { Input, Textarea } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
 import { Checkbox } from "@nextui-org/checkbox";
+import Link from "next/link";
+import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/breadcrumbs";
 
 export default function Esic() {
   const schema = Yup.object().shape({
@@ -74,20 +76,24 @@ export default function Esic() {
     formik;
 
   return (
-    <div className="w-full h-auto">
-      <Header />
-      <GridContent>
-        <h1 className="text-3xl text-[#024c3d] font-semibold">
-          E-sic - Sistema de informação ao cidadão
-        </h1>
-        <p className="text-wrap text-base text-gray-400">
-          Usuário dos serviços públicos municipais você pode entrar em contato
-          com a Ouvidoria, para apresentar sua manifestação, como
-          sugestão/crítica, reclamações/denuncias, solicitações, informação e
-          outros.
-        </p>
-        <Divider />
-        <div className="w-full flex items-center justify-center">
+    <GridContent>
+      <Breadcrumbs>
+        <BreadcrumbItem href="/">Home</BreadcrumbItem>
+        <BreadcrumbItem>E-sic</BreadcrumbItem>
+      </Breadcrumbs>
+      <div className="w-full h-full flex">
+        <div className="w-[49%] flex flex-col gap-4">
+          <h1 className="text-3xl text-[#024c3d] font-semibold">
+            E-sic - Sistema de informação ao cidadão
+          </h1>
+          <p className="text-wrap text-base text-gray-400">
+            Usuário dos serviços públicos municipais, você pode entrar em
+            contato com a Ouvidoria, para apresentar sua manifestação, como
+            sugestão/crítica, reclamações/denuncias, solicitações, informação e
+            outros.
+          </p>
+        </div>
+        <div className="w-[49%] flex items-center justify-center">
           <form onSubmit={handleSubmit} method="POST">
             <div className="w-[500px] h-auto flex flex-col gap-5">
               <label className="text-base text-[#024c3d] font-semibold">
@@ -210,7 +216,9 @@ export default function Esic() {
                   setFieldValue("aceitoTermos", e.target.checked)
                 }
               >
-                 Declaro que as informações acima são verdadeiras e estou ciente de estar sujeito às penas da legislação pertinente caso tenha afirmado falsamente os dados preenchidos.
+                Declaro que as informações acima são verdadeiras e estou ciente
+                de estar sujeito às penas da legislação pertinente caso tenha
+                afirmado falsamente os dados preenchidos.
               </Checkbox>
               <Button
                 type="submit"
@@ -221,8 +229,7 @@ export default function Esic() {
             </div>
           </form>
         </div>
-      </GridContent>
-      <Footer />
-    </div>
+      </div>
+    </GridContent>
   );
 }

@@ -29,8 +29,8 @@ export function Footer() {
           <div className="flex flex-col gap-2 font-light">
             <h1 className="text-lg font-bold">INSTITUCIONAL</h1>
             <Link href="/">Presidência</Link>
-            <Link href="/">Mesa Diretora</Link>
-            <Link href="/">Parlamentares</Link>
+            <Link href="/parlamentares/mesa-diretora">Mesa Diretora</Link>
+            <Link href="/parlamentares">Parlamentares</Link>
             <Link href="/">Legislação</Link>
             <Link href="/">Carta de serviços</Link>
             <Link href="/">Perguntas frequentes</Link>
@@ -54,8 +54,8 @@ export function Footer() {
           <div className="flex flex-col gap-2 font-light">
             <h1 className="text-lg font-bold">TRANSPARENCIA</h1>
             <Link href="/">Lei de Acesso à Informação</Link>
-            <Link href="/">E-SIC</Link>
-            <Link href="/">Ouvidoria</Link>
+            <Link href="/esic">E-SIC</Link>
+            <Link href="/ouvidoria">Ouvidoria</Link>
             <Link href="/">Relatório de Gestão Fiscal</Link>
             <Link href="/">Prestação de contas</Link>
             <Link href="/">Contas da gestão</Link>

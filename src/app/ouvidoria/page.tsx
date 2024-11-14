@@ -4,17 +4,17 @@ import React from "react";
 import { Footer } from "../_components/Footer";
 import { GridContent } from "../_components/GridContent";
 import { Header } from "../_components/Header";
+import ErrorMessage from "../_components/ErrorMessage";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { Divider } from "@nextui-org/divider";
 import { Input } from "@nextui-org/input";
 import { Select, SelectSection, SelectItem } from "@nextui-org/select";
 import { Textarea } from "@nextui-org/input";
 import { assuntos } from "../_data/assuntos";
 import { Button } from "@nextui-org/react";
-import ErrorMessage from "../_components/ErrorMessage";
+import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/breadcrumbs";
 export default function Ouvidoria() {
   const schema = Yup.object().shape({
     assunto: Yup.string().required(),
@@ -46,23 +46,27 @@ export default function Ouvidoria() {
     formik;
 
   return (
-    <div className="w-full h-auto">
-      <Header />
-      <GridContent>
-        <h1 className="text-3xl text-[#024c3d] font-semibold">Ouvidoria</h1>
-        <p className="text-wrap text-base text-gray-400">
-          Usuário dos serviços públicos municipais você pode entrar em contato
-          com a Ouvidoria, para apresentar sua manifestação, como
-          sugestão/crítica, reclamações/denuncias, solicitações, informação e
-          outros.
-        </p>
-        <Divider />
-        <h1 className="text-3xl text-[#024c3d] font-semibold text-center">
-          Criar uma manifestação
-        </h1>
+    <GridContent>
+      <Breadcrumbs>
+        <BreadcrumbItem href="/">Home</BreadcrumbItem>
+        <BreadcrumbItem>Ouvidoria</BreadcrumbItem>
+      </Breadcrumbs>
+      <div className="w-full h-full flex">
+        <div className="w-[49%] flex flex-col gap-4">
+          <h1 className="text-3xl text-[#024c3d] font-semibold">Ouvidoria</h1>
+          <p className="text-wrap text-base text-gray-400">
+            Usuário dos serviços públicos municipais você pode entrar em contato
+            com a Ouvidoria, para apresentar sua manifestação, como
+            sugestão/crítica, reclamações/denuncias, solicitações, informação e
+            outros.
+          </p>
+        </div>
 
-        <div className="w-full flex items-center justify-center">
+        <div className="w-[49%] flex items-center justify-center">
           <form onSubmit={handleSubmit} method="POST">
+            <label className="text-base text-[#024c3d] font-semibold">
+              Manifestação
+            </label>
             <div className="w-[500px] h-auto flex flex-col gap-5">
               <Input
                 aria-label="Seu nome"
@@ -118,17 +122,13 @@ export default function Ouvidoria() {
               {errors.descricao && touched.descricao && (
                 <ErrorMessage>{errors.descricao}</ErrorMessage>
               )}
-              <Button
-                type="submit"
-                className="bg-[#024c3d] text-white w-full"
-              >
+              <Button type="submit" className="bg-[#024c3d] text-white w-full">
                 Enviar
               </Button>
             </div>
           </form>
         </div>
-      </GridContent>
-      <Footer />
-    </div>
+      </div>
+    </GridContent>
   );
 }

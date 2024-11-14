@@ -8,7 +8,10 @@ const DividerY = () => {
 export function UserAction() {
   return (
     <div className="flex sm:flex-row flex-col border-[#06624d] border-2 rounded-tl-lg rounded-tr-lg">
-      <Link href="/ouvidoria" className="cursor-pointer sm:h-36 h-12 w-64 bg-[#06624d] rounded-tl-md p-5 flex justify-start items-center">
+      <Link
+        href="/ouvidoria"
+        className="cursor-pointer sm:h-36 h-12 w-64 bg-[#06624d] rounded-tl-md p-5 flex justify-start items-center"
+      >
         <div className="flex flex-col w-36 h-16 p-0">
           <Image
             alt="Ouvidoria"
@@ -37,7 +40,10 @@ export function UserAction() {
         </div>
       </Link>
       <DividerY />
-      <div className="cursor-pointer sm:h-36 h-12 w-64 p-5 flex justify-start items-center">
+      <Link
+        href="/acesso-a-informacao"
+        className="cursor-pointer sm:h-36 h-12 w-64 p-5 flex justify-start items-center"
+      >
         <div className="flex flex-col w-36 h-16 p-0">
           <Image
             alt="Acesso a informação"
@@ -50,7 +56,7 @@ export function UserAction() {
             Acesso a informação
           </span>
         </div>
-      </div>
+      </Link>
       <DividerY />
       <div className=" cursor-pointer sm:h-36 h-12 w-64 p-5 flex justify-start items-center">
         <div className="flex flex-col w-36 h-16 p-0">
