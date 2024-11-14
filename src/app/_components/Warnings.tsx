@@ -17,7 +17,7 @@ export function Warnings() {
       </div>
 
       <div className="w-full flex items-center justify-center py-4">
-        <Link href="/" className="text-[#024c3d] text-lg font-semibold flex items-center gap-3">
+        <Link href="/noticias" className="text-[#024c3d] text-lg font-semibold flex items-center gap-3">
           Ver todas as Notícias
           <FiChevronRight />
         </Link>

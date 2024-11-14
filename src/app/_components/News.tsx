@@ -1,8 +1,12 @@
 import { Image } from "@nextui-org/react";
 import { Chip } from "@nextui-org/chip";
+import Link from "next/link";
 export function News() {
   return (
-    <div className="w-[280px] cursor-pointer">
+    <Link
+      href="/noticias/123/noticia"
+      className="w-[280px] cursor-pointer"
+    >
       <div className="w-full h-[160px] rounded-xl overflow-hidden">
         <Image
           isZoomed
@@ -34,6 +38,6 @@ export function News() {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

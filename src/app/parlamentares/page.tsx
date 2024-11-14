@@ -1,3 +1,4 @@
+"use client";
 import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/breadcrumbs";
 import { Footer } from "../_components/Footer";
 import { Header } from "../_components/Header";
@@ -77,6 +78,10 @@ export default function ParlamentaresPage() {
 
   return (
     <GridContent>
+      <Breadcrumbs>
+        <BreadcrumbItem href="/">Home</BreadcrumbItem>
+        <BreadcrumbItem>Parlamentares</BreadcrumbItem>
+      </Breadcrumbs>
       <div className="w-full grid grid-cols-4 gap-6">
         {parlamentares.map((parlamentar, index) => (
           <Link href={`/parlamentares/${parlamentar.id}/parlamentar`}>

@@ -1,15 +1,16 @@
 "use client";
 import { GridContent } from "@/app/_components/GridContent";
 import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/breadcrumbs";
-export default function Parlamentar() {
+
+export default function Noticia(){
   return (
     <GridContent>
       <Breadcrumbs>
         <BreadcrumbItem href="/">Home</BreadcrumbItem>
-        <BreadcrumbItem href="/parlamentares">Parlamentares</BreadcrumbItem>
-        <BreadcrumbItem>Parlamentar</BreadcrumbItem>
+        <BreadcrumbItem href="/noticias">Notícias</BreadcrumbItem>
+        <BreadcrumbItem>Notícia</BreadcrumbItem>
       </Breadcrumbs>
-      <p> Parlamentar </p>
+      <h1>Noticia</h1>
     </GridContent>
-  );
+  )
 }

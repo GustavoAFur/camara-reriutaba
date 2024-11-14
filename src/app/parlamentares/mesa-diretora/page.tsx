@@ -1,9 +1,10 @@
+"use client";
 import { Footer } from "@/app/_components/Footer";
 import { GridContent } from "@/app/_components/GridContent";
 import { Header } from "@/app/_components/Header";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import Link from "next/link";
-
+import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/breadcrumbs";
 export default function MesaDiretora() {
   const parlamentares = [
     {
@@ -40,6 +41,11 @@ export default function MesaDiretora() {
 
   return (
     <GridContent>
+      <Breadcrumbs>
+        <BreadcrumbItem href="/">Home</BreadcrumbItem>
+        <BreadcrumbItem href="/parlamentares">Parlamentares</BreadcrumbItem>
+        <BreadcrumbItem>Mesa Diretora</BreadcrumbItem>
+      </Breadcrumbs>
       <div className="w-full grid grid-cols-4 gap-10">
         {parlamentares.map((parlamentar, index) => (
           <Link href={`/parlamentares/${parlamentar.id}/parlamentar`}>
