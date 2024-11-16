@@ -9,6 +9,8 @@ import ErrorMessage from "../_components/ErrorMessage";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
+import { NumberFormatBase, PatternFormat } from 'react-number-format';
+
 import { Input } from "@nextui-org/input";
 import { Select, SelectSection, SelectItem } from "@nextui-org/select";
 import { Textarea } from "@nextui-org/input";
@@ -68,6 +70,7 @@ export default function Ouvidoria() {
               Manifestação
             </label>
             <div className="w-[500px] h-auto flex flex-col gap-5">
+            
               <Input
                 aria-label="Seu nome"
                 isRequired

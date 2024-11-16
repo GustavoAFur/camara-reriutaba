@@ -1,7 +1,5 @@
 "use client";
-import { Footer } from "@/app/_components/Footer";
 import { GridContent } from "@/app/_components/GridContent";
-import { Header } from "@/app/_components/Header";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import Link from "next/link";
 import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/breadcrumbs";

@@ -1,17 +1,15 @@
 "use client";
-import { Footer } from "../_components/Footer";
 import { GridContent } from "../_components/GridContent";
-import { Header } from "../_components/Header";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { Divider } from "@nextui-org/divider";
 import { Input, Textarea } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
 import { Checkbox } from "@nextui-org/checkbox";
-import Link from "next/link";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/breadcrumbs";
+
+import { PatternFormat } from "react-number-format";
 
 export default function Esic() {
   const schema = Yup.object().shape({
@@ -115,19 +113,25 @@ export default function Esic() {
                   onChange={handleChange}
                 />
                 <div className="w-full flex gap-3">
-                  <Input
-                    name="cpf"
-                    type="text"
-                    placeholder="CPF"
+                  <PatternFormat
+                    customInput={Input} // Passa o Input do NextUI como componente customizado
+                    format="###.###.###-##" // Formato de máscara (exemplo: número de telefone)
+                    allowEmptyFormatting
+                    mask=" "
+                    label="Cpf"
+                    fullWidth
+                    onChange={handleChange}
                     value={values.cpf}
-                    onChange={handleChange}
                   />
-                  <Input
-                    name="telefone"
-                    type="text"
-                    placeholder="Telefone"
-                    value={values.telefone}
+                  <PatternFormat
+                    customInput={Input} // Passa o Input do NextUI como componente customizado
+                    format="(##)#####-####" // Formato de máscara (exemplo: número de telefone)
+                    allowEmptyFormatting
+                    mask=" "
+                    label="Telefone"
+                    fullWidth
                     onChange={handleChange}
+                    value={values.telefone}
                   />
                 </div>
                 <div className="w-full flex gap-3">
@@ -150,12 +154,15 @@ export default function Esic() {
                   Dados do endereço
                 </label>
                 <div className="w-full flex flex-col gap-3">
-                  <Input
-                    name="cep"
-                    type="text"
-                    placeholder="CEP"
-                    value={values.cep}
+                  <PatternFormat
+                    customInput={Input} // Passa o Input do NextUI como componente customizado
+                    format="#####-###" // Formato de máscara (exemplo: número de telefone)
+                    allowEmptyFormatting
+                    mask=" "
+                    label="CEP"
+                    fullWidth
                     onChange={handleChange}
+                    value={values.cep}
                   />
                   <Input
                     name="bairro"

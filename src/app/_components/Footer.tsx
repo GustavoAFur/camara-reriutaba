@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Copyright } from "./Copyright";
@@ -33,7 +34,7 @@ export function Footer() {
             <Link href="/parlamentares">Parlamentares</Link>
             <Link href="/">Legislação</Link>
             <Link href="/">Carta de serviços</Link>
-            <Link href="/">Perguntas frequentes</Link>
+            <Link href="/faq">Perguntas frequentes</Link>
           </div>
           <div className="flex flex-col gap-2 font-light">
             <h1 className="text-lg font-bold">ATIVIDADES LEGISLATIVA</h1>
