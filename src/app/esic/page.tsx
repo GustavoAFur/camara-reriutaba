@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import { Input, Textarea } from "@nextui-org/input";
-import { Button } from "@nextui-org/react";
+import { Button, Divider } from "@nextui-org/react";
 import { Checkbox } from "@nextui-org/checkbox";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/breadcrumbs";
 
@@ -79,8 +79,8 @@ export default function Esic() {
         <BreadcrumbItem href="/">Home</BreadcrumbItem>
         <BreadcrumbItem>E-sic</BreadcrumbItem>
       </Breadcrumbs>
-      <div className="w-full h-full flex">
-        <div className="w-[49%] flex flex-col gap-4">
+      <div className="w-full h-full flex sm:flex-row flex-col ">
+        <div className="sm:w-[49%] flex flex-col gap-4 mb-4">
           <h1 className="text-3xl text-[#024c3d] font-semibold">
             E-sic - Sistema de informação ao cidadão
           </h1>
@@ -91,10 +91,11 @@ export default function Esic() {
             outros.
           </p>
         </div>
-        <div className="w-[49%] flex items-center justify-center">
+        <Divider />
+        <div className="sm:w-[49%]flex items-center justify-center">
           <form onSubmit={handleSubmit} method="POST">
-            <div className="w-[500px] h-auto flex flex-col gap-5">
-              <h1 className="text-base text-[#024c3d] font-semibold mb-4">
+            <div className="sm:w-[500px] h-auto flex flex-col gap-5">
+              <h1 className="text-base text-[#024c3d] font-semibold sm:mb-4 mt-4 sm:mt-0">
                 Dados pessoais
               </h1>
               <div className="w-full flex flex-col gap-3">
