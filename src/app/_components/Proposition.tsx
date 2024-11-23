@@ -5,7 +5,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 export function Proposition() {
   return (
-    <div className="w-96 h-80  flex flex-col items-start gap-6 group border-[#f5f5f6] hover:border-[#06624d] border-medium rounded-lg p-7">
+    <div className="max-w-96 h-80  flex flex-col items-start gap-6 group border-[#f5f5f6] hover:border-[#06624d] border-medium rounded-lg p-7">
       <div className="relative w-14 h-14 rounded-full overflow-hidden">
         <Image
           src={"/luizin.jpeg"}

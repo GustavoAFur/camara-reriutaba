@@ -94,9 +94,9 @@ export default function Esic() {
         <div className="w-[49%] flex items-center justify-center">
           <form onSubmit={handleSubmit} method="POST">
             <div className="w-[500px] h-auto flex flex-col gap-5">
-              <label className="text-base text-[#024c3d] font-semibold">
+              <h1 className="text-base text-[#024c3d] font-semibold mb-4">
                 Dados pessoais
-              </label>
+              </h1>
               <div className="w-full flex flex-col gap-3">
                 <Input
                   name="nome"

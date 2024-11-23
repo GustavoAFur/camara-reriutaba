@@ -9,7 +9,7 @@ import ErrorMessage from "../_components/ErrorMessage";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { NumberFormatBase, PatternFormat } from 'react-number-format';
+import { NumberFormatBase, PatternFormat } from "react-number-format";
 
 import { Input } from "@nextui-org/input";
 import { Select, SelectSection, SelectItem } from "@nextui-org/select";
@@ -66,11 +66,10 @@ export default function Ouvidoria() {
 
         <div className="w-[49%] flex items-center justify-center">
           <form onSubmit={handleSubmit} method="POST">
-            <label className="text-base text-[#024c3d] font-semibold">
+            <h1 className="text-base text-[#024c3d] font-semibold mb-4">
               Manifestação
-            </label>
+            </h1>
             <div className="w-[500px] h-auto flex flex-col gap-5">
-            
               <Input
                 aria-label="Seu nome"
                 isRequired

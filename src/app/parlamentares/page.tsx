@@ -80,7 +80,7 @@ export default function ParlamentaresPage() {
         <BreadcrumbItem href="/">Home</BreadcrumbItem>
         <BreadcrumbItem>Parlamentares</BreadcrumbItem>
       </Breadcrumbs>
-      <div className="w-full grid grid-cols-4 gap-6">
+      <div className="mt-4 w-full flex flex-col items-center sm:grid grid-cols-5 gap-6">
         {parlamentares.map((parlamentar, index) => (
           <Link href={`/parlamentares/${parlamentar.id}/parlamentar`}>
             <Card shadow="none" key={index}>
