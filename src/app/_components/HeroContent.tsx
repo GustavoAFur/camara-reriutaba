@@ -4,7 +4,7 @@ import { FiSearch } from "react-icons/fi";
 export function HeroContent() {
   return (
     <div className="flex justify-center items-center gap-4 w-full h-auto px-28 py-20">
-      <div className="flex flex-col gap-4 w-[50%]">
+      <div className="flex flex-col gap-4 sm:w-[50%]">
         <h1 className="text-5xl text-white font-bold">
           Transparência: tenha a informação que precisa.
         </h1>
