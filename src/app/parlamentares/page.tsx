@@ -88,14 +88,14 @@ export default function ParlamentaresPage() {
                 <Image
                   shadow="sm"
                   radius="lg"
-                  width={200}
+                  width="100%"
                   height={200}
                   alt={"luizin"}
                   className="w-full object-cover h-[140px]"
                   src="/luizin.jpeg"
                 />
               </CardBody>
-              <CardFooter className="text-small justify-between flex flex-col items-start">
+              <CardFooter className="text-small justify-between flex flex-col items-start truncate">
                 <b>{parlamentar.nome}</b>
                 <p className="text-default-500">{parlamentar.partido}</p>
               </CardFooter>

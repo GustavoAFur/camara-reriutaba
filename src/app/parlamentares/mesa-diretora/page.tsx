@@ -18,7 +18,7 @@ export default function MesaDiretora() {
       id: "iqwiqwiquwuwy",
     },
     {
-      nome: "Luiz Cezar Vale Mesquita",
+      nome: "Luiz Cezar Vale Mesquita mesquita",
       cargo: "Vice-Presidente da Câmara",
       partido: "PSB",
       id: "iqwiqwiquwuwy",
@@ -44,7 +44,7 @@ export default function MesaDiretora() {
         <BreadcrumbItem href="/parlamentares">Parlamentares</BreadcrumbItem>
         <BreadcrumbItem>Mesa Diretora</BreadcrumbItem>
       </Breadcrumbs>
-      <div className="w-full grid grid-cols-4 gap-10">
+      <div className="mt-4 w-full flex flex-col items-center sm:grid grid-cols-5 gap-6">
         {parlamentares.map((parlamentar, index) => (
           <Link href={`/parlamentares/${parlamentar.id}/parlamentar`}>
             <Card shadow="none" key={index}>
@@ -52,14 +52,14 @@ export default function MesaDiretora() {
                 <Image
                   shadow="sm"
                   radius="lg"
-                  width={200}
+                  width="100%"
                   height={200}
                   alt={"luizin"}
                   className="w-full object-cover h-[140px]"
                   src="/luizin.jpeg"
                 />
               </CardBody>
-              <CardFooter className="text-small justify-between flex flex-col items-start">
+              <CardFooter className="text-small justify-between flex flex-col items-start truncate">
                 <b>{parlamentar.nome}</b>
                 <b>{parlamentar.cargo}</b>
                 <p className="text-default-500">{parlamentar.partido}</p>
