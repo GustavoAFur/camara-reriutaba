@@ -53,8 +53,8 @@ export default function Ouvidoria() {
         <BreadcrumbItem href="/">Home</BreadcrumbItem>
         <BreadcrumbItem>Ouvidoria</BreadcrumbItem>
       </Breadcrumbs>
-      <div className="w-full h-full flex">
-        <div className="w-[49%] flex flex-col gap-4">
+      <div className="w-full h-full flex sm:flex-row flex-col">
+        <div className="sm:w-[49%] flex flex-col gap-4">
           <h1 className="text-3xl text-[#024c3d] font-semibold">Ouvidoria</h1>
           <p className="text-wrap text-base text-gray-400">
             Usuário dos serviços públicos municipais você pode entrar em contato
@@ -64,12 +64,12 @@ export default function Ouvidoria() {
           </p>
         </div>
 
-        <div className="w-[49%] flex items-center justify-center">
+        <div className="sm:w-[49%] w-full mt-4 sm:mt-0">
           <form onSubmit={handleSubmit} method="POST">
             <h1 className="text-base text-[#024c3d] font-semibold mb-4">
               Manifestação
             </h1>
-            <div className="w-[500px] h-auto flex flex-col gap-5">
+            <div className="w-full h-auto flex flex-col gap-5">
               <Input
                 aria-label="Seu nome"
                 isRequired

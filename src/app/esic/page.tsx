@@ -91,8 +91,7 @@ export default function Esic() {
             outros.
           </p>
         </div>
-        <Divider />
-        <div className="sm:w-[49%]flex items-center justify-center">
+        <div className="sm:w-[49%] flex flex-col items-center justify-center">
           <form onSubmit={handleSubmit} method="POST">
             <div className="sm:w-[500px] h-auto flex flex-col gap-5">
               <h1 className="text-base text-[#024c3d] font-semibold sm:mb-4 mt-4 sm:mt-0">
