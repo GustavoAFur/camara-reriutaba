@@ -29,7 +29,6 @@ export function Footer() {
         <div className="flex flex-col gap-6 text-white px-4">
           <div className="flex flex-col gap-2 font-light">
             <h1 className="text-lg font-bold">INSTITUCIONAL</h1>
-            <Link href="/">Presidência</Link>
             <Link href="/parlamentares/mesa-diretora">Mesa Diretora</Link>
             <Link href="/parlamentares">Parlamentares</Link>
             <Link href="/">Legislação</Link>

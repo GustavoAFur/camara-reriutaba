@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Proposition } from "./Proposition";
 import { FiChevronRight, FiChevronsRight } from "react-icons/fi";
+import { GridContent } from "./GridContent";
 export function Propositions() {
   return (
-    <div className="w-full h-auto sm:px-10 sm:py-10 py-6 px-4">
+    <GridContent>
       <h1 className="text-3xl text-[#024c3d] py-4 font-semibold">
         Últimas Proposições
       </h1>
@@ -21,6 +22,6 @@ export function Propositions() {
           <FiChevronRight />
         </Link>
       </div>
-    </div>
+    </GridContent>
   );
 }

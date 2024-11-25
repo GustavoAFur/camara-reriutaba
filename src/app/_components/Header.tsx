@@ -8,6 +8,7 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
+  Divider,
 } from "@nextui-org/react";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -19,10 +20,10 @@ import Link from "next/link";
 
 export function Header() {
   const menuItems = [
-    "INSTITUCIONAL",
-    "PARLAMENTAR",
-    "ATIVIDADES",
-    "TRANSPARENCIA",
+    { value: "INSTITUCIONAL", link: "/" },
+    { value: "PARLAMENTARES", link: "/parlamentares" },
+    { value: "ATIVIDADES", link: "/" },
+    { value: "TRANSPARENCIA", link: "/" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -75,10 +76,7 @@ export function Header() {
           </NavbarBrand>
           <NavbarContent className="hidden sm:flex gap-6" justify="center">
             <NavbarItem>
-              <Link
-                href="/"
-                className="font-normal text-white text-base"
-              >
+              <Link href="/" className="font-normal text-white text-base">
                 institucional
               </Link>
             </NavbarItem>
@@ -128,9 +126,9 @@ export function Header() {
                     : "foreground"
                 }
                 className="w-full"
-                href="#"
+                href={item.link}
               >
-                {item}
+                {item.value}
               </Link>
             </NavbarMenuItem>
           ))}
@@ -140,10 +138,43 @@ export function Header() {
         <div
           className={`${
             isOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
-          } transform transition-all duration-300 origin-top absolute left-0 top-auto w-full bg-white shadow-lg mt-2 pt-5`}
+          } transform transition-all duration-500 origin-top absolute left-0 top-auto w-full bg-white shadow-lg mt-2 pt-5`}
           style={{ zIndex: 1000 }}
         >
           <CouncilorsList />
+          <Divider />
+          <div className="w-full h-12 flex items-center justify-evenly m-0 p-2">
+            <Link
+              onClick={() => {
+                setIsOpen(false);
+              }}
+              href="/parlamentares"
+            >
+              <p className="text-[#06624d] text-lg font-extralight">
+                Vereadores
+              </p>
+            </Link>
+            <Divider orientation="vertical" />
+            <Link
+              onClick={() => {
+                setIsOpen(false);
+              }}
+              href="/parlamentares/mesa-diretora"
+              className="text-[#06624d] text-lg font-extralight"
+            >
+              Mesa diretora
+            </Link>
+            <Divider orientation="vertical" />
+            <Link
+              onClick={() => {
+                setIsOpen(false);
+              }}
+              href="/parlamentares"
+              className="text-[#06624d] text-lg font-extralight"
+            >
+              Galeria
+            </Link>
+          </div>
         </div>
       )}
     </>

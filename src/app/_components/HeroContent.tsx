@@ -9,7 +9,7 @@ export function HeroContent() {
           Transparência: tenha a informação que precisa.
         </h1>
         <p className="text-xs font-light text-white shadow-sm">
-          Procure por algo
+          Procure por algo:
         </p>
 
         <Input
