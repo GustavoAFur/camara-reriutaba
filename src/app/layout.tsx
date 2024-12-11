@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { Header } from "./_components/Header";
-import { Footer } from "./_components/Footer";
 import LayoutWrapper from "./layoutWrapper";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserratFont = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Camara municipal de Rerutaba",
@@ -16,11 +14,9 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-
-
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={montserratFont.className}>
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>

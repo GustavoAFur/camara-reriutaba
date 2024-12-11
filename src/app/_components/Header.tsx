@@ -23,7 +23,7 @@ export function Header() {
     { value: "INSTITUCIONAL", link: "/" },
     { value: "PARLAMENTARES", link: "/parlamentares" },
     { value: "ATIVIDADES", link: "/" },
-    { value: "TRANSPARENCIA", link: "/" },
+    { value: "TRANSPARENCIA", link: "/transparencia" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -105,7 +105,7 @@ export function Header() {
             <NavbarItem>
               <Link
                 color="foreground"
-                href="#"
+                href="/transparencia"
                 className="font-normal text-white text-base"
               >
                 transparência
